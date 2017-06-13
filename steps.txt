@@ -69,7 +69,7 @@ en pratique : création d'un model (dossier models) basé sur schema de la bdd
 
     >> rails generate model Product name:string url:string (maj singuilier) va generer migration + model (migrate)
       2. >> rails db:migrate
-
+      NOM MODELE EN CamelCase maj
 Voir 17:00 si bloqué
 
 Ajouter une colonne dans notre table produit (tagline):
@@ -79,7 +79,9 @@ Ajouter une colonne dans notre table produit (tagline):
 
 Validations Active Record (voir model product.rb permet d'écrire en base des données clean eviter doublons etc)
 
+5. CRUD
 
+Create Read Update Delete
 
-
-
+  1. start avec routes.rb pour add urls de CRUD
+  2.
