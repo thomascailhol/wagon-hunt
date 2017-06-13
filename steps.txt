@@ -1,0 +1,74 @@
+1. Configurer les routes
+
+  Deux fichiers : config > routes
+                  controllers > pages_controller
+                  (généré à la creation avec template wagon gère les pages statiques)
+
+  terminal : rails routes pour lister les routes éxistantes
+  dans fichier routes : root to: 'pages#home' set up la home
+  et get "/team" => "pages#team" pour des pages.
+  Il faut ensuite implémenter ces actions dans pages_controller.rb
+  eg :
+    get "/contact" => "pages#join_us" =
+    def join_us
+      render plain: "Welcome!"
+    end
+
+Pour créer nouveau controller : rails g controller Products
+
+2. Render des templates html au lieu de plain text
+
+convention action/vue = une action dans un controller va
+generer un template dans un dossier qui a meme nom que
+controller dans une page qui a même nom que l'action
+(eg PagesController > dossier pages def home > page home.html.erb)
+
+ERB : Embeded Ruby (des pages html dans lesquelles on peut injecter du ruby
+avec <%= ruby %> )
+eg ('   <p>
+    We have <strong><%= 2 +2 %></strong> new products today
+  </p> ' = We have 4 new products) >> bad practice
+  good practice > render que des variables dans html.
+  eg je déclare ma variable @today (variable d'instance et non locale) = Date.today dans pages_controller action home
+  Je rendre <%= @today %> dans HTML
+
+3. Transmettre des params dans http (cf ce qu'on pouvait pas faire sur hd)
+
+Plusieurs façons de passer un param :
+
+1. Dans une url dynamique (ex sur facebook username)
+2. Query string : ( =? paramas dans url style search airbnb)
+3. POST ça passe dans le corps de la requete
+
+Rails ne fait pas la diff car il passe dans tout un hash de param ruby
+
+4. Active record
+
+La table au pluriel est reliée au modele singl.
+Pour generer un model : rails g model Product name:string url:string
+
+Un model va générer deux fichiers :
+
+  un modele
+  un fichier de migration qui si lancé créera la table en base
+  using rails db migrate
+
+  playground active record(methodes):
+    1. rails console pour tester des chose
+    2. Product.all = SELECT * FROM products
+    3. créer : kudoz = Product.new(name: "kudoz", url: "getkudoz.com")
+        kudoz.save (INSERT INTO products (name, url) VALUES ('kudoz', 'getkudoz.com'))
+        >> en une ligne : Product.create(name: 'hubum', url: 'http://ubum.com')
+    4. trouver : Product.find(1)
+          SELECT * FROM products WHERE id = 1
+    5. Trouver par nom : Product.find_by_name('kudoz')
+        Product.find(1)
+          SELECT * FROM products WHERE name = 'kudoz'
+
+en pratique : création d'un model (dossier models) basé sur schema de la bdd
+
+    >> rails generate model Product name:string url:string (maj singuilier) va generer migration + model (migrate)
+      2. >> rails db:migrate
+
+Voir 17:00 si bloqué
+
