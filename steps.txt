@@ -75,4 +75,11 @@ Voir 17:00 si bloqué
 Ajouter une colonne dans notre table produit (tagline):
 
   rails g migration AddTagLineToProducts tagline:string (CamelCase maj)
-  migration added to migrate : rails db:migrate
+  migration added to migrate : srails db:migrate
+
+Validations Active Record (voir model product.rb permet d'écrire en base des données clean eviter doublons etc)
+
+
+
+
+
