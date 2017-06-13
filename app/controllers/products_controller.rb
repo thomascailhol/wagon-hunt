@@ -16,10 +16,10 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     @product.save
-    redirect_to @product
+    redirect_to products_path
   end
-  private
 
+  private
   def product_params
     params.require(:product).permit(:name, :url)
   end
