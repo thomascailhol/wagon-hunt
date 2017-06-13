@@ -72,3 +72,7 @@ en pratique : création d'un model (dossier models) basé sur schema de la bdd
 
 Voir 17:00 si bloqué
 
+Ajouter une colonne dans notre table produit (tagline):
+
+  rails g migration AddTagLineToProducts tagline:string (CamelCase maj)
+  migration added to migrate : rails db:migrate
