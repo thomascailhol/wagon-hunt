@@ -83,5 +83,21 @@ Validations Active Record (voir model product.rb permet d'écrire en base des do
 
 Create Read Update Delete
 
-  1. start avec routes.rb pour add urls de CRUD
-  2.
+  1. start avec routes.rb pour add urls de CRUD ou resource
+  2. Créer les actions dans controller
+
+HELPERS
+
+quand rails routes on voit préfixes à gauche ils permettent de générer les urls sans taper en dur
+
+ex : <p>
+  <%= link_to "Revenir à l'accueil", root_path, class="btn btn-primary" %>
+</p>
+
+6. Actions new et create
+
+Creation d'une page pour créer un pdt (avec un form)
+Par défault rails attribue un token à un form post pour éviter accès exterieur
+on le désactive dans application_controller pour test
+
+note : .pry pour faire des points d'arrêts pour debug
