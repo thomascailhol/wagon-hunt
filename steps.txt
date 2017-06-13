@@ -100,6 +100,35 @@ Creation d'une page pour créer un pdt (avec un form)
 Par défault rails attribue un token à un form post pour éviter accès exterieur
 on le désactive dans application_controller pour test
 
+creation du form html
+
+<!--     <form action="/products" method="post">
+
+        <div class="form-group">
+          <label for="name">Choisissez un nom de produit</label>
+          <input type="text" name="product[name]" placeholder="Kudoz" class="form-control" id="name">
+        </div>
+
+        <div class="form-group">
+          <label for="url">URL du site web</label>
+          <input type="text" name="product[url]" placeholder="http://ku.doz/" class="form-control" id="url">
+        </div>
+
+        <input type="submit" value="Ajouter" class="btn btn-primary">
+
+      </form> -->
+qu'on remplace par code form ruby en utilisant simple_form
 note : .pry pour faire des points d'arrêts pour debug
 
 utiliser config > seeds pour clean le pdt
+
+
+7. REFACTO
+
+1. product_controller:
+creer un "filtre" (before_action) "find_product" only sur les actions ciblés
+Implementer la méthode en private à la fin "def find_product" du code qu'on repetait
+
+2. Views
+Création d'une partielle _form.html
+<%= render "form" %> ou il y a besoin du form

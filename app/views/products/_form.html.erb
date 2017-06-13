@@ -1,0 +1,5 @@
+    <%= simple_form_for @product do |f| %>
+        <%= f.input :name, placeholder: 'Kudoz' %>
+        <%= f.input :url, placeholder: 'http://getkudoz.com' %>
+        <%= f.button :submit, 'Add', class: 'btn btn-primary' %>
+    <% end %>
