@@ -101,3 +101,5 @@ Par défault rails attribue un token à un form post pour éviter accès exterie
 on le désactive dans application_controller pour test
 
 note : .pry pour faire des points d'arrêts pour debug
+
+utiliser config > seeds pour clean le pdt
