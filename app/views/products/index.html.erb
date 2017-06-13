@@ -1,8 +1,13 @@
 <h1 >All products</h1>
 
-<p>
-  <%= link_to "Revenir à l'accueil", root_path, class: "btn btn-primary" %>
-</p>
+<ul class="list-inline">
+  <li>
+    <%= link_to "Revenir à l'accueil", root_path, class: "btn btn-primary" %>
+  </li>
+  <li>
+    <%= link_to "Ajouter un produit", new_product_path, class: "btn btn-success" %>
+  </li>
+</ul>
 <ul>
   <% @products.each do |product| %>
     <li>
