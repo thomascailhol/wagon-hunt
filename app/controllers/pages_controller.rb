@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+
+  skip_before_action :authenticate_user! # skip list blanche de app_controller
+
   def home
     @today = Date.today
   end

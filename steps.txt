@@ -198,3 +198,41 @@ CSS > component du layout donc dossier layout
   A SAVOIR :
     git push heroku master après un commit
     heroku run rails db:migrate à enchainer si des modifs en base sinon heroku restart needed
+
+  lancer console sur heroku :
+    heroku run rails c
+
+11. Users
+
+  1. Instal devise gem (bundle instal après avoir add au fichier)
+  2. rails generate devise:install
+  3. dans devise.rb config dispos notamment pour pw
+  4. placer da,s layout:
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  5. créer model user > rails generate devise User > rails db:migrate
+  6. users/sign_in & users/sign_up accessibles
+  7. update de la partielle navbar
+  8. if sur les alertes sur la home
+  9. clean des designs alertes
+  10. creation partial (flash) pour les alertes
+  11. clean design des vues signin signup
+  12. rails generate devise:views > views > devise
+  13. limiter accès des user non co > application controler
+
+12. link product to user
+  1. rails g migration AddUserToProducts user:references
+  2. rails db:migrate
+  3. models > product.rb > belongs_to :user
+  4. models > users > has_many :products
+  5. play dans la console pour verif
+  6. update de la vue show pour add l'email du hunter avec un if pour pas planter si pas hunter
+
+13. test
+  1. update du seed
+  2. rails db:drop
+  3. rails db:create db:migrate db:seed
+
+14. creation pdt par user
+  1. @product.user = current_user dans products_controller
+  2. update validation > product.rb > validates :user, presence: true

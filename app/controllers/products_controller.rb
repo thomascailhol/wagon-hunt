@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ] # skip certaines restricitions du before dans app_ctrl
   before_action :find_product, only: [:show, :edit, :update, :destroy] # refacto voir find_product
 
 
@@ -16,6 +17,7 @@ class ProductsController < ApplicationController
   end
   def create
     @product = Product.new(product_params)
+    @product.user = current_user
     if @product.save
       redirect_to products_path
     else
