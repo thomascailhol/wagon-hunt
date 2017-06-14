@@ -175,3 +175,26 @@ CSS > component du layout donc dossier layout
   8. Controler
     add un if dans def index pour display que pdts de cat
 
+(version wagon :
+<ol>
+  <li>D’abord la <strong>DB</strong> : cette user story necessite-t-elle de changer le schéma de notre DB sur <a href="http://db.lewagon.org">http://db.lewagon.org</a>.</li>
+  <li>Ensuite le <strong>modèle</strong> : faut-il générer un nouveau modèle (et donc une nouvelle table) ou alors juste une migration pour modifier une table existante ?</li>
+  <li>Ensuite le <strong>routing</strong> : faut-il de nouvelles routes ?</li>
+  <li>Ensuite le <strong>controlleur</strong> : que doit-on modifier dans les actions du controlleur ? Y-a-t-il de nouveaux <em>strong params</em> à autoriser ?</li>
+  <li>Enfin les <strong>vues</strong> : quelle informations dois-je ajouter à mes vues (nouvelles données, nouvelles navigations, nouveau boutons, etc..)</li>
+</ol>
+)
+
+10. HEROKU
+  1. Creation compte
+  2. DL via terminal
+  3. heroku login
+  4. heroku create --region=eu kyol-hunt
+  5. deploy : git remote -v pour voir les remote
+  6. git push heroku master
+
+  Logs sur heroku avec heroku logs et si erreur heroku run rails db:migrate
+
+  A SAVOIR :
+    git push heroku master après un commit
+    heroku run rails db:migrate à enchainer si des modifs en base sinon heroku restart needed

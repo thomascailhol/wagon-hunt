@@ -8,8 +8,10 @@
 
 Product.destroy_all
 
-Product.create!(name: 'Kudoz', url: 'http://getkudoz.com', tagline: "Tinder for jobs")
-Product.create!(name: 'Panoragram', url: 'http://panoragr.am', tagline: "Panoramas on Instagram")
-Product.create!(name: 'Waver', url: 'http://waver.co', tagline: "Take better decisions")
+Product.create!(name: 'Kudoz', url: 'http://getkudoz.com', tagline: "Tinder for jobs", category: "tech")
+Product.create!(name: 'Panoragram', url: 'http://panoragr.am', tagline: "Panoramas on Instagram", category: "tech")
+Product.create!(name: 'Waver', url: 'http://waver.co', tagline: "Take better decisions", category: "tech")
+Product.create!(name: 'InVision', url: 'http://invision.com', tagline: "A sweet design tool", category: "design")
+Product.create!(name: 'OpenClassRooms', url: 'http://openclassrooms.com', tagline: "Learn coding", category: "education")
 
 # "!" pour declencher erreur si un pb
