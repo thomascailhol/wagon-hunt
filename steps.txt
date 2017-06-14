@@ -143,3 +143,35 @@ Navbar à placer dans le layout views > layout > app car dispo dans tout le site
 Best practice >> création d'un dossier shared pour faire une partielle pour navbar à injecter dans layout.
 >> <%= render "shared/navbar" %>
 CSS > component du layout donc dossier layout
+
+9 Recap new feature (category)
+  1. BDD
+    1. BDD schema update (best practice créer un table category et add cat id à products)
+    2. rails g migration AddCategoryToProducts category:string
+    3. rails db:migrate
+
+  2. Model
+    1. validation inclusion :
+        validates :category, inclusion: { in: %w(tech education design),
+        message: "%{value} is not a valid category" }
+
+  3. Routing > OK
+
+  4. Controller > ok for now
+
+  5. Form
+    type collection pour laisser le choix prompt au lieu de label
+        <%= f.input :category, collection: ["tech", "education", "design"], prompt: "Which category?" %>
+
+  6. Controler
+    Ajouter champs category dans les permissions
+
+  7. Views
+    update show.html.erb avec un span pour injecter cat
+    update home avec filtres :
+      Ajout des blocks
+      Design des cards dans _card_category.scss et @import dans _index.scss
+
+  8. Controler
+    add un if dans def index pour display que pdts de cat
+
