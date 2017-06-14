@@ -132,3 +132,14 @@ Implementer la méthode en private à la fin "def find_product" du code qu'on re
 2. Views
 Création d'une partielle _form.html
 <%= render "form" %> ou il y a besoin du form
+
+8. Front end
+
+Layout > Utilisation des components du wagon
+
+Après avoir créer div > on crée une partielle scss _banner qu'on import dans _index
+
+Navbar à placer dans le layout views > layout > app car dispo dans tout le site.
+Best practice >> création d'un dossier shared pour faire une partielle pour navbar à injecter dans layout.
+>> <%= render "shared/navbar" %>
+CSS > component du layout donc dossier layout
