@@ -243,3 +243,22 @@ CSS > component du layout donc dossier layout
   3. add cloudinary url dans application.yml
   4. test   <%= cl_image_tag "uvcr6ephisp24lmptn4h", width: 400, height: 100, crop: "fill" %>
   5. voir + dans la doc
+
+16. Upload photo pdt
+  1. setup attachinary
+  2. models > product > has_attachment :photo
+  3. Add input au form
+  4. Controler > method find product > add photo to params
+  5. update la view show
+  6. update bg image avec cloudinary url
+  7. update de l'index
+
+17. Uplodad photo avatar
+  1. model > product > has_attachment :avatar
+  2. update le form devise > views > devise > regist > edit
+  3. update application controller avec content du gists
+  4. update navbar
+
+18. Deploiement
+    1. need envoyer variable env cloudinary >
+      1. heroku config:add CLOUDINARY_URL=CONTENT
