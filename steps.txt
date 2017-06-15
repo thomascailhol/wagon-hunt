@@ -236,3 +236,10 @@ CSS > component du layout donc dossier layout
 14. creation pdt par user
   1. @product.user = current_user dans products_controller
   2. update validation > product.rb > validates :user, presence: true
+
+15. Images
+  1. cloudinary account + gem cloudinary
+  2. figaro gem
+  3. add cloudinary url dans application.yml
+  4. test   <%= cl_image_tag "uvcr6ephisp24lmptn4h", width: 400, height: 100, crop: "fill" %>
+  5. voir + dans la doc
