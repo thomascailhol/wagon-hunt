@@ -262,3 +262,32 @@ CSS > component du layout donc dossier layout
 18. Deploiement
     1. need envoyer variable env cloudinary >
       1. heroku config:add CLOUDINARY_URL=CONTENT
+    2. git push heroku master && heroku run rails db:migrate (pour gem attachinary)
+
+19. Upvote set up
+  1. table de jointure (relation many to many)
+  2. rails g model upvote user:references product:references (references = ids)
+  3. rails db:migrate
+  4. model > upvote avec deux belongs to
+  5. ajoute les has_many dans user et product
+  6. update la seed avec upvotes
+  7. tester en console rails db:drop db:create db:migrate db:seed
+  8. go index pour update info dynamique <%= product.upvotes.size %>
+
+20. Upvoter un pdt
+  1. 2 actions sur ressource upvote : create/destroy
+  2. Add route   resources :upvotes, only: [ :create]
+  3. rails g controller upvotes
+  4. def create (need un user et un pdt)
+  5. update view index avec un
+  6. bloquer le multi upvote
+    1. add methode voted_for? dans model user
+    2. faire un if dans la view index
+
+21. Unvoted
+  1. créer destroy dans upvote controller
+  2. ouvrir la route destroy
+  3. update la view avec if
+  4. add une validation pour rendre upvote unique sur scope product
+
+22. clean design upvotes

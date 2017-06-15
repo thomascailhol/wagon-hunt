@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "/contact" => "pages#join_us"
 
   resources :products # automatise routing CRUD + possibilité add contraitnes : , only: [:new, :create, :index, :show] automatise le routing CRUD
-
+  resources :upvotes, only: [ :create, :destroy ]
   # resources :products équivalent à :
   # # Read action routes (CRUD)
   # get "/products" => "products#index"

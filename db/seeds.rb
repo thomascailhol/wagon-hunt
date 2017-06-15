@@ -15,10 +15,18 @@ remi = User.create(email: 'remi@waver.co', password: 'testtest')
 kelly = User.create(email: 'kelly@waver.co', password: 'testtest')
 jules = User.create(email: 'jules@waver.co', password: 'testtest')
 
-Product.create!(user: thomas, name: 'Kudoz', url: 'http://getkudoz.com', tagline: "Tinder for jobs", category: "tech")
-Product.create!(user: kelly, name: 'Panoragram', url: 'http://panoragr.am', tagline: "Panoramas on Instagram", category: "tech")
-Product.create!(user: kelly, name: 'Waver', url: 'http://waver.co', tagline: "Take better decisions", category: "tech")
+kudoz = Product.create!(user: thomas, name: 'Kudoz', url: 'http://getkudoz.com', tagline: "Tinder for jobs", category: "tech")
+panoragram = Product.create!(user: kelly, name: 'Panoragram', url: 'http://panoragr.am', tagline: "Panoramas on Instagram", category: "tech")
+waver = Product.create!(user: kelly, name: 'Waver', url: 'http://waver.co', tagline: "Take better decisions", category: "tech")
 Product.create!(user: jules, name: 'InVision', url: 'http://invision.com', tagline: "A sweet design tool", category: "design")
 Product.create!(user: remi, name: 'OpenClassRooms', url: 'http://openclassrooms.com', tagline: "Learn coding", category: "education")
 
 # "!" pour declencher erreur si un pb
+
+waver.upvotes.create! user: thomas
+waver.upvotes.create! user: kelly
+waver.upvotes.create! user: remi
+panoragram.upvotes.create! user: thomas
+panoragram.upvotes.create! user: kelly
+panoragram.upvotes.create! user: remi
+kudoz.upvotes.create! user: thomas
