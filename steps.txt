@@ -291,3 +291,9 @@ CSS > component du layout donc dossier layout
   4. add une validation pour rendre upvote unique sur scope product
 
 22. clean design upvotes
+
+23. Ajax
+   1. add remote: true sur le  (pour passer en js au lieu html)
+   2. update le controller
+   3. creer create.js.erb
+   4. creer partielle pour upvote show
