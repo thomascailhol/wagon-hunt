@@ -22,8 +22,9 @@
         <% end %>
 
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li>
+            <%= link_to "Profile", edit_user_registration_path %>
+            </li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
           </ul>
         </div>
@@ -43,9 +44,10 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+            <li>
+            <%= link_to "Profile", edit_user_registration_path %>
+            </li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
       </ul>
     </div>
   </div>
