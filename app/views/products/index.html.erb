@@ -11,8 +11,6 @@
             <%= render "upvotes/show", product: product %>
           </div>
 
-
-
             <% if product.photo? %>
               <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: "product-image") %>
             <% else %>

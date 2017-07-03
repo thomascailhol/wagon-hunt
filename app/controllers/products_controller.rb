@@ -37,8 +37,8 @@ class ProductsController < ApplicationController
   end
   def destroy
     if @product.user == current_user
-    @product.destroy # detruit
-    redirect_to products_path
+      @product.destroy # detruit
+      redirect_to products_path
     else
     redirect_to products_path
     flash[:alert] = "Action impossible, ce produit n'est pas le votre."
